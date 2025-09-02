@@ -26,12 +26,9 @@
       <!-- Right: Social Icons -->
       <div class="nav-social-wrapper">
         <ul class="nav-social">
-          <li><a href="#" class="nav-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="#" class="nav-social-link" aria-label="Spotify"><i class="fab fa-spotify"></i></a></li>
-          <li><a href="#" class="nav-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
-          <li><a href="#" class="nav-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#" class="nav-social-link" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a></li>
-          <li><a href="#" class="nav-social-link" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+          {%- for entry in site.social_links -%}
+            <li><a href="{{ entry.url }}" class="nav-social-link" aria-label="{{ entry.title }}" target="_blank"><i class="fab fa-{{ entry.icon }}"></i></a></li>
+          {%- endfor -%}
         </ul>
       </div>
       
@@ -80,12 +77,9 @@
     <!-- Mobile Social Icons - Moved to bottom -->
     <div class="mobile-social-wrapper">
       <ul class="mobile-social">
-        <li><a href="#" class="mobile-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="#" class="mobile-social-link" aria-label="Spotify"><i class="fab fa-spotify"></i></a></li>
-        <li><a href="#" class="mobile-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
-        <li><a href="#" class="mobile-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#" class="mobile-social-link" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a></li>
-        <li><a href="#" class="mobile-social-link" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+        {%- for entry in site.social_links -%}
+          <li><a href="{{ entry.url }}" class="mobile-social-link" aria-label="{{ entry.title }}" target="_blank"><i class="fab fa-{{ entry.icon }}"></i></a></li>
+        {%- endfor -%}
       </ul>
     </div>
   </div>
