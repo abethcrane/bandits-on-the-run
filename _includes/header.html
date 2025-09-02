@@ -26,9 +26,7 @@
       <!-- Right: Social Icons -->
       <div class="nav-social-wrapper">
         <ul class="nav-social">
-          {%- for entry in site.social_links -%}
-            <li><a href="{{ entry.url }}" class="nav-social-link" aria-label="{{ entry.title }}" target="_blank"><i class="fa{% if entry.icon == 'envelope' %}s{% else %}b{% endif %} fa-{{ entry.icon }}"></i></a></li>
-          {%- endfor -%}
+          {%- include social.html style="header" -%}
         </ul>
       </div>
       
@@ -77,9 +75,7 @@
     <!-- Mobile Social Icons - Moved to bottom -->
     <div class="mobile-social-wrapper">
       <ul class="mobile-social">
-        {%- for entry in site.social_links -%}
-          <li><a href="{{ entry.url }}" class="mobile-social-link" aria-label="{{ entry.title }}" target="_blank"><i class="fa{% if entry.icon == 'envelope' %}s{% else %}b{% endif %} fa-{{ entry.icon }}"></i></a></li>
-        {%- endfor -%}
+        {%- include social.html style="header" -%}
       </ul>
     </div>
   </div>

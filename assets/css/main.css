@@ -818,6 +818,14 @@ button:hover, .btn:hover {
   transform: scale(1.1);
 }
 
+.social-link--header {
+  color: rgb(241, 208, 208); 
+}
+
+.social-link--header:hover {
+  color: rgba(241, 208, 208, 0.8); /* slightly transparent version for hover */
+}
+
 /* Removed copyright section styles - no longer needed */
 
 /* Responsive Design */

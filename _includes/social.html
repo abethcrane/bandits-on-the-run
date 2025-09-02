@@ -1,5 +1,6 @@
+{%- assign icon_style = include.style | default: "default" -%}
 {%- for entry in site.social_links -%}
-  <a href="{{ entry.url }}" target="_blank" title="{{ entry.title }}" class="social-link">
+  <a href="{{ entry.url }}" target="_blank" title="{{ entry.title }}" class="social-link social-link--{{ icon_style }}">
     <i class="fa{% if entry.icon == 'envelope' %}s{% else %}b{% endif %} fa-{{ entry.icon }} fa-lg"></i>
   </a>
 {%- endfor -%}
