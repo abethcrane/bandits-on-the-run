@@ -1,0 +1,49 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section social-section">
+        <div class="social-links">
+          {%- include social.html -%}
+        </div>
+      </div>
+      
+      <div class="footer-section mailing-list">
+        <h3 class="footer-title">Want to receive little letters from the bandits?</h3>
+        <p class="footer-text">Sign up with your email address to receive little letters from yours truly, Bandits on the Run.</p>
+        
+        <form class="footer-form" id="mailing-list-form" novalidate>
+          <div class="error-message" id="email-error" role="alert"></div>
+          <div class="input-button-wrapper">
+            <input 
+              type="email" 
+              id="email-input"
+              name="email"
+              placeholder="Email Address" 
+              required
+              aria-describedby="email-error"
+            >
+            <button type="submit" class="btn btn-primary">
+              Join the mailing list for LITTLE LETTERS from Bandits
+            </button>
+          </div>
+        </form>
+        
+        <div class="success-message" id="success-message" role="alert" style="display: none;">
+          <p>Thanks for signing up! You'll receive little letters from the bandits soon.</p>
+        </div>
+        
+        <p class="footer-text">We respect your privacy.</p>
+      </div>
+      
+      <div class="footer-section contact-info">
+        <div class="footer-contact">
+          <p class="contact-email">BANDITSONTHERUN@GMAIL.COM</p>
+          <p class="contact-location">BROOKLYN, NY</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ '/assets/js/mailing-list.js' | relative_url }}"></script>
+  

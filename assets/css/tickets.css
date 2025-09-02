@@ -1,0 +1,502 @@
+.ticket-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+  min-height: 320px; /* Account for ticket height + padding */
+}
+
+/* Custom scrollbar for Webkit browsers */
+.ticket-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.ticket-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ticket-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.ticket-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure tickets don't overflow their container */
+.ticket {
+  flex: 0 0 600px; /* Don't grow, don't shrink, base width 600px */
+  max-width: 85%; /* Prevent overflow on narrow screens */
+  position: relative;
+  width: 600px;
+  padding: 1.5rem;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  overflow: auto; /* Changed from scroll to auto */
+}
+
+.ticket:hover {
+  transform: translateY(-5px) rotate(1deg);
+}
+
+/* Classic Ticket Style - WCAG AA compliant */
+.ticket-classic {
+  background: linear-gradient(45deg, #f8f8f8, #ffffff);
+  border: 2px solid #2c2c2c;
+  border-radius: 4px;
+  color: #2c2c2c;
+  background-image: 
+    linear-gradient(0deg, rgba(44, 44, 44, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(44, 44, 44, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.ticket-classic::after {
+  color: #2c2c2c;
+}
+
+/* Neon Ticket Style - WCAG AA compliant */
+.ticket-neon {
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid #00ffff;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 0% 0%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+  background-size: 60px 60px, 40px 40px, 40px 40px;
+  background-position: center, 0 0, 100% 100%;
+}
+
+.ticket-neon::after {
+  color: #00ffff;
+}
+
+/* Vintage Ticket Style - WCAG AA compliant */
+.ticket-vintage {
+  background: #f4e4bc;
+  color: #4a3728;
+  border: 1px solid #8b4513;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm10 10c0-5.523 4.477-10 10-10v20c-5.523 0-10-4.477-10-10z' fill='%238b4513' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E"),
+    linear-gradient(45deg, #f4e4bc, #f8e8c8);
+}
+
+.ticket-vintage::after {
+  color: #8b4513;
+}
+
+/* Indie Ticket Style - WCAG AA compliant */
+.ticket-indie {
+  background: #1a2634;
+  color: #ffffff;
+  border: 2px solid #e74c3c;
+  border-radius: 4px;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0V0zm50 50c0-27.614 22.386-50 50-50v100c-27.614 0-50-22.386-50-50z' fill='%23e74c3c' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, #1a2634, #2c3e50);
+}
+
+.ticket-indie::after {
+  color: #e74c3c;
+}
+
+.ticket-indie .ticket-date {
+  color: #e74c3c;
+}
+
+/* Coffee Shop Ticket Style - WCAG AA compliant */
+.ticket-coffee {
+  background: #f5e6d3;
+  color: #3e2723;
+  border: 2px solid #5d4037;
+  border-radius: 4px;
+  font-family: 'Georgia', serif;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm20 20c0-11.046 8.954-20 20-20v40c-11.046 0-20-8.954-20-20z' fill='%235d4037' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E"),
+    linear-gradient(45deg, #f5e6d3, #f8e8c8);
+}
+
+.ticket-coffee::after {
+  color: #5d4037;
+}
+
+/* Folk/Pop Ticket Style - WCAG AA compliant */
+.ticket-pop {
+  background: #f8f4ff;
+  color: #4a148c;
+  border: 2px solid #9c27b0;
+  border-radius: 8px;
+  font-family: 'Georgia', serif;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0c22.091 0 40 17.909 40 40s-17.909 40-40 40S0 62.091 0 40 17.909 0 40 0zm0 10c-16.569 0-30 13.431-30 30s13.431 30 30 30 30-13.431 30-30S56.569 10 40 10zm0 15c8.284 0 15 6.716 15 15s-6.716 15-15 15-15-6.716-15-15 6.716-15 15-15z' fill='%239c27b0' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, #f8f4ff, #e8e4ff);
+}
+
+.ticket-pop::after {
+  color: #9c27b0;
+}
+
+.ticket-pop .ticket-date {
+  color: #9c27b0;
+  text-shadow: none;
+  font-family: 'Georgia', serif;
+}
+
+.ticket-pop::before {
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+  transform: none;
+  text-shadow: none;
+}
+
+/* National Park Ticket Style - WCAG AA compliant */
+.ticket-national-park {
+  background: #e3f2fd;
+  color: #1a237e;
+  border: 2px solid #1976d2;
+  border-radius: 4px;
+  font-family: 'Times New Roman', serif;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='100' height='60' viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 60 L50 20 L100 60 Z' fill='%231976d2' fill-opacity='0.05'/%3E%3C/svg%3E");
+  background-size: 100px 60px;
+  background-repeat: repeat;
+}
+
+.ticket-national-park::after {
+  color: #1976d2;
+}
+
+.ticket-national-park .ticket-date {
+  color: #1976d2;
+}
+
+.ticket-content {
+  position: relative;
+  z-index: 1;
+  padding: 0.5rem 0;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 0.75rem;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.ticket-date {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  flex: 1;
+}
+
+.ticket-venue {
+  font-size: 1.6rem;
+  font-weight: bold;
+  flex: 1;
+  text-align: right;
+}
+
+.ticket-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ticket-location {
+  font-size: 1.2rem;
+  font-style: italic;
+  flex: 1;
+}
+
+.ticket-time {
+  font-size: 1.2rem;
+  flex: 1;
+  text-align: right;
+}
+
+.ticket-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px dashed currentColor;
+  opacity: 0.7;
+}
+
+.ticket-links a {
+  flex: 1;
+  text-align: center;
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  cursor: pointer; /* Add pointer cursor only to clickable links */
+}
+
+/* Button styles for each ticket type - WCAG AA compliant */
+.ticket-classic .ticket-links a {
+  background: #2c2c2c;
+  color: #ffffff;
+}
+
+.ticket-neon .ticket-links a {
+  background: #00ffff;
+  color: #000000;
+}
+
+.ticket-vintage .ticket-links a {
+  background: #8b4513;
+  color: #ffffff;
+}
+
+.ticket-indie .ticket-links a {
+  background: #e74c3c;
+  color: #ffffff;
+}
+
+.ticket-coffee .ticket-links a {
+  background: #5d4037;
+  color: #ffffff;
+}
+
+.ticket-pop .ticket-links a {
+  background: #9c27b0;
+  color: #ffffff;
+}
+.ticket-national-park .ticket-links a {
+  background: #1976d2;
+  color: #ffffff;
+}
+
+.ticket-links a:hover,
+.ticket-links a:focus {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.ticket-links a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.ticket-links a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Move ADMIT ONE inside and style it */
+.ticket::before {
+  content: 'ADMIT ONE';
+  position: absolute;
+  top: 0.5rem;
+  left: 1.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+/* Style variations for ADMIT ONE text */
+.ticket-neon::before {
+  text-shadow: 0 0 5px currentColor;
+}
+
+.ticket-pop::before {
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+  transform: none;
+  text-shadow: none;
+}
+
+.ticket-vintage::before {
+  font-family: 'Courier New', monospace;
+  font-style: italic;
+}
+
+.ticket-indie::before {
+  font-family: 'Helvetica Neue', sans-serif;
+  letter-spacing: 3px;
+}
+
+.ticket-coffee::before {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+}
+
+.ticket-national-park::before {
+  font-family: 'Times New Roman', serif;
+  letter-spacing: 3px;
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Update media query breakpoint for wider tickets */
+@media (max-width: 640px) { /* 600px ticket + 2rem padding */
+  .ticket-container {
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    margin: 0 -2rem;
+    padding-bottom: 1rem;
+  }
+
+ .ticket {
+  width: 400px
+ }; 
+} 
+
+.ticket-lineup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0.5rem 0;
+}
+
+.main-band {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.other-bands {
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Disabled button styles */
+.ticket-button.disabled {
+  background: #e0e0e0 !important;
+  color: #9e9e9e !important;
+  cursor: not-allowed; /* Keep not-allowed cursor for disabled buttons */
+  opacity: 0.7;
+  box-shadow: none;
+  border: 1px solid #bdbdbd;
+}
+
+.ticket-button.disabled:hover,
+.ticket-button.disabled:focus {
+  transform: none;
+  box-shadow: none;
+  outline: none;
+  opacity: 0.7;
+}
+
+/* Error message styles */
+.error-message {
+  padding: 1rem;
+  margin: 1rem 0;
+  background: #ffebee;
+  border: 1px solid #ffcdd2;
+  border-radius: 4px;
+  color: #c62828;
+}
+
+.error-details {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
+
+/* Forest Ticket Style - WCAG AA compliant */
+.ticket-forest {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  color: #1b5e20;
+  border: 2px solid #81c784;
+  border-radius: 4px;
+  font-family: 'Georgia', serif;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2381c784' fill-opacity='0.08'%3E%3Cpath d='M40 10 L45 25 L35 25 Z'/%3E%3Cpath d='M40 15 L48 35 L32 35 Z'/%3E%3Cpath d='M40 25 L52 50 L28 50 Z'/%3E%3Crect x='38' y='50' width='4' height='20' rx='1'/%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  background-size: 80px 80px;
+  box-shadow: 0 8px 16px rgba(129, 199, 132, 0.2);
+}
+
+.ticket-forest:hover {
+  box-shadow: 0 12px 24px rgba(129, 199, 132, 0.3);
+}
+
+.ticket-forest .ticket-button {
+  background: #4caf50;
+  color: #fff;
+}
+
+.ticket-forest .ticket-button:hover {
+  background: #388e3c;
+}
+
+.ticket-forest .ticket-admit {
+  color: #2e7d32;
+  font-family: 'Georgia', serif;
+  text-shadow: 2px 2px 0 #c8e6c9;
+}
+
+.ticket-forest::before {
+  font-family: 'Georgia', serif;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 0 #c8e6c9;
+}
+
+/* Update button styles for forest theme */
+.ticket-forest .ticket-links a {
+  background: #81c784;
+  color: #1b5e20;
+} 
+
+/* No shows message styles */
+.no-shows-message {
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.no-shows-message p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.5;
+} 

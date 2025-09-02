@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="/assets/css/theater.css">
+
+<div class="theater-bg">
+  <div class="buildings-row">
+    <!-- Fake building facades for style, or use a background image -->
+    <div class="building" data-project="gilbert-grape">
+        <span></span>
+      <img src="/assets/images/theater/gilbert.jpg" alt="Gilbert Grape Poster" class="building-poster" />
+      <div class="building-title">What's Eating Gilbert Grape</div>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="building" data-project="yukon-ho">
+        <span></span>
+      <img src="/assets/images/theater/yukon.jpg" alt="Yukon Ho Poster" class="building-poster" />
+      <div class="building-title">Yukon, Ho!</div>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="building" data-project="as-you-like-it">
+        <span></span>
+      <img src="/assets/images/theater/shakespeare.jpg" alt="As You Like It Poster" class="building-poster" />
+      <div class="building-title">As You Like It</div>
+      <span></span><span></span><span></span><span></span>
+    </div>    <div class="building" data-project="moonchildren">
+        <span></span>
+      <img src="/assets/images/theater/moonchildren.avif" alt="Moonchildren Poster" class="building-poster" />
+      <div class="building-title">Moonchildren</div>
+      <span></span>
+    </div>
+  </div>
+  <div class="project-details" id="project-details"></div>
+</div>
+
+<script>
+const projectData = {
+  "gilbert-grape": {
+    title: "What's Eating Gilbert Grape: The Musical",
+    html: `<p>Bandits on the Run are working on the stage musical adaptation of the novel What's Eating Gilbert Grape in association with MCC Theater, alongside actor-musician Christopher Sears and Academy Award Nominee Peter Hedges, who wrote the original book and screenplay.</p>`
+  },
+  "yukon-ho": {
+    title: "Yukon, Ho!",
+    html: `<p>Yukon, Ho! is a new musical created by the indie-folk-americana trio Bandits on the Run, inspired by untold stories of Black prospectors who were part of the Yukon Gold Rush. This past August, the Bandits undertook a writing and research trip to Alaska. Come enjoy new songs and stories as part of this special concert evening sharing their work-in-process.</p>`
+  },
+  "as-you-like-it": {
+    title: "As You Like It (CMU)",
+    html: `<p>"Bandits on the Run jumped at the chance to create songs for friend of the band / director Peter Anderson's production of As You Like It at Carnegie Mellon University. Not only is As You Like It widely regarded as the queerest of Shakespeare work, this version of the play (which would also feature songs from Twelfth Night) would lean into those queer elements of the play by casting all roles as gender non-conforming. Actors were cast in roles that were best suited to their spirits, and many of the actors' gender identities were different than what one might usually expect them to be from a traditional binaried casting lens. It excited us that we were tasked with writing songs that broke a mold of being for strictly a male or female voice in these famous classical roles. The opening and queering of that casting process opened up a whole boundless sonic universe to play with.`
+  },
+  "moonchildren": {
+    title: "Moonchildren",
+    html: `<p>Moonchildren is a new Rock Opera written by Christopher Sears in collaboration with Sienna Sears, Adrian Enscoe and Sydney Shepherd. A tour de force with 2 pianos, guitar, accordion, cello & kick drum enjoy this spectacular choral feat as we witness a man finding his true path with the help of the FOOL the force of the MOON and the wisdom of the beggar woman GRACE.</p>`
+  }
+};
+
+document.querySelectorAll('.building').forEach(el => {
+  el.addEventListener('click', function() {
+    const proj = this.getAttribute('data-project');
+    const details = projectData[proj];
+    document.getElementById('project-details').innerHTML = `
+      <div class="details-card">
+        <h2>${details.title}</h2>
+        ${details.html}
+      </div>
+    `;
+  });
+});
+</script>
