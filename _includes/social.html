@@ -1,5 +1,5 @@
 {%- for entry in site.social_links -%}
   <a href="{{ entry.url }}" target="_blank" title="{{ entry.title }}" class="social-link">
-    <i class="fa-brands fa-{{ entry.icon }} fa-lg"></i>
+    <i class="fa{% if entry.icon == 'envelope' %}s{% else %}b{% endif %} fa-{{ entry.icon }} fa-lg"></i>
   </a>
 {%- endfor -%}
