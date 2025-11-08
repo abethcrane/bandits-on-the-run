@@ -22,7 +22,7 @@ title: Bandits on the Run
 email: banditsontherun@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Bandits on the Run is an indie-folk-pop-americana outfit consisting of three lead singers, a guitar, a cello, a suitcase drum, an accordion, and various toy instruments. They hail from Brooklyn, NY and are known for their vivacious performance style, genre-defying sound, soaring harmonies, and ability to make music-magic happen everywhere from subway platforms to concert halls. 
-baseurl: "/bandits-on-the-run" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://abethcrane.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 social_links:
   - title: Instagram
