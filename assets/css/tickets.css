@@ -28,7 +28,7 @@
 /* Ensure tickets don't overflow their container */
 .ticket {
   flex: 0 0 600px; /* Don't grow, don't shrink, base width 600px */
-  max-width: 85%; /* Prevent overflow on narrow screens */
+  max-width: 100%; /* Prevent overflow on narrow screens */
   position: relative;
   width: 600px;
   padding: 1.5rem;
@@ -197,6 +197,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .ticket-date {
@@ -205,6 +206,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   flex: 1;
+  min-width: 200px;
 }
 
 .ticket-venue {
@@ -212,7 +214,14 @@
   font-weight: bold;
   flex: 1;
   text-align: right;
+  min-width: 200px;
 }
+
+@media (max-width: 500px) {
+  .ticket-venue {
+    text-align: left;
+  }
+} 
 
 .ticket-details {
   display: flex;
@@ -385,7 +394,7 @@
  .ticket {
   width: 400px
  }; 
-} 
+}
 
 .ticket-lineup {
   display: flex;
