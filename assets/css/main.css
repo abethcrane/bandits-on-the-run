@@ -1019,7 +1019,7 @@ button:hover, .btn:hover {
   }
   
   .footer-content {
-    gap: 2.5rem; /* Slightly reduced but still generous */
+    gap: 1rem; /* Slightly reduced but still generous */
   }
   
   .footer-section {
@@ -1176,7 +1176,7 @@ button:hover, .btn:hover {
   }
   
   .footer-content {
-    gap: 2rem; /* Reduced but still generous on mobile */
+    gap: 1rem; /* Reduced but still generous on mobile */
   }
   
   .footer {
